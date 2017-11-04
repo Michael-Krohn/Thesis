@@ -9,11 +9,46 @@ To lower the material density and power dissipation in the pixel detector, the p
 
 This chapter summarizes an experiment~\cite{CMOSRadiation} that characterized the response of 65 nm CMOS transistors to a cumulative radiation dose of 1 Grad while being held below $-20^{\circ}\mathrm{C}$.
 
+\section{Radiation Damage Mechanisms}
+
+Two types of radiation damage can occur when energetic particles pass through a semiconductor device and either electron-hole pairs (ionization damage) are created or silicon atoms are displaced from their lattice sites (displacement damage). This chapter will focus on ionization damage. 
+
+Ionization damage occurs in the insulating layers of the device, usually $\ce{SiO_{2}}$, when the electrons and holes drift to different locations where they are trapped and cause unwanted electromagnetic fields within the device. There are two locations of insulating layers within current semiconductors: the gate oxide and the shallow trench isolation (STI) oxide. A layout of a CMOS transistor can be seen in Figure~\ref{fig:CMOS_Layout}\cite{CMOSLayout}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4 in]{RadiationStudies/CMOS_Layout_2.jpg}
+\end{center}
+\caption{The cross section view of an n-channel transistor. The transistor is built on a p-type substrate with n-type implants as the source and drain. An inversion layer is formed in the conducting channel when a positive voltage is applied to the gate. The gate dielectric (gate oxide) and shallow trench isolation (STI) oxide are the green regions\cite{CMOSLayout}.}
+\label{fig:CMOS_Layout}
+\end{figure}
+
+Gate oxide separates the gate terminal from the conductive channel that connects the source and drain and serves as a dielectric layer so that the gate can sustain a high electric field. When electron-hole pairs are created in the gate oxide the electrons are swept out of the oxide by the positive voltage applied on the gate terminal while holes move in the opposite direction toward the Si/$\ce{SiO_{2}}$ interface. Two separate mechanisms can then occur~\cite{TIDEffects}: 
+\begin{itemize}
+\item \textbf{Deep Hole Trapping:}  There is a transition region from $\ce{SiO_{2}}$ to Si where the oxidation is not complete and there are oxygen vacancies. These vacancies cause weak Si-Si bonds, where each Si atom is also bonded to three oxygen atoms, that are broken by holes which then remain trapped there. The holes accumulate at the interface causing a buildup of positive charge.
+\item \textbf{Radiation-Induced Traps:} At the Si/$\ce{SiO_{2}}$ interface there are tri-valent Si atoms that have been passivated by H atoms. Radiation-induced holes free protons from the oxide and the protons then travel to the Si/$\ce{SiO_{2}}$ interface. At the interface the proton breaks the Si-H bond to form $\ce{H_{2}}$ and a trivalent Si atom that is left with an unpassivated dangling bond that is an electrically active defect.
+\end{itemize}
+These effects cause the voltage seen by the conductive channel to differ from the actual voltage applied at the gate terminal and thus, the transistor will turn on at a different voltage than it was designed to. These mechanisms are extremely dependent on the thickness of the gate oxide and more deep hole and radiation-induced traps will build up the thicker the gate oxide is. 
+
+STI oxide is implanted in the silicon between adjacent semiconductors to prevent leakage current. The same mechanisms that occur in the gate oxide also occur in the STI oxide, however they effect the transistor functionality differently. When charge builds up in the STI oxide, a conductive channel is opened between the source and drain of the transistor and leakage current can flow even when the transistor is turned off. This is illistrated in Figure~\ref{fig:LeakageCurrent}\cite{LeakageCurrent}. 
+
+The radiation induced charge that is trapped in the STI also prevents channel inversion near the STI and reduces the conductive channel width. This is referred to as Radiation Induced Narrow Channel Effect (RINCE)\cite{RINCE} and is more evident in narrow channel devices. A narrower conductive channel allows less current to flow from the source to drain and thus, the maximum drain to source current that can be achieved is decreased.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4 in]{RadiationStudies/LeakageCurrent_2.jpg}
+\end{center}
+\caption{The crosses represent positive charge build up in the shallow trench isolation (STI) oxide, which allow current to pass between the source and the drain when no voltage is applied to the gate\cite{LeakageCurrent}.}
+\label{fig:LeakageCurrent}
+\end{figure}
+
+Transistors can at least partially recover from these radiation induced damage mechanisms through a process called annealing. This is a complex process that occurs either when trapped charge tunnels out of the oxide or is thermally excited enough to leave the oxide. Once a charge is free from the oxide, it is swept away by oppositely charged voltage contacts of the transistor. 
+
 \section{Experimental Details}
 
 \subsection{Transistor Test Setup}
 
-A 65 nm CMOS Application Specific Integrated Circuit (ASIC) containing individual transistors connected to wire bond pads was built for radiation tolerance testing. Transistors within the ASIC were laid out in groups of similar transistors, for example all N-type metal-oxide-semiconductor (NMOS) transistors with the same channel length (L). Within a group, all transistors share a gate pad and a source/drain pad. The other drain/source of the transistor is connected to its own wire bonding pad. The devices tested were P-type metal-oxide-semiconductor (PMOS) and NMOS core transistors operated at 1.2 V and NMOS input/output (I/O) transistors with double thickness gate oxide operated at 2.5 V. Several transistor sizes were included for core PMOS and NMOS transistors: transistors with L $=60$ nm and a channel width (W) between 120 and 1000 nm, one transistor with W $=500$ nm and L $=500$ nm, and one with W $=5000$ nm and L $=5000$ nm. The I/O NMOS transistors sizes tested had W $=280$ nm and L between 400 and 1000 nm, a transistor with W $=500$ nm and L $=500$ nm, and one with W $=5000$ nm and L $=5000$ nm.
+A 65 nm CMOS Application Specific Integrated Circuit (ASIC) containing individual transistors connected to wire bond pads was built for radiation tolerance testing. Transistors within the ASIC were laid out in groups of similar transistors, for example all N-type metal-oxide-semiconductor (NMOS) transistors with the same channel length (L). Within a group, all transistors share a gate pad and a source/drain pad. The other drain/source of the transistor is connected to its own wire bonding pad, so that each transistor characteristic can be measured individually. The devices tested were P-type metal-oxide-semiconductor (PMOS) and NMOS core transistors operated at 1.2 V and NMOS input/output (I/O) transistors with double thickness gate oxide operated at 2.5 V. Several transistor sizes were included for core PMOS and NMOS transistors: transistors with L $=60$ nm and a channel width (W) between 120 and 1000 nm, one transistor with size W/L $=500/500$ nm, and one with size $5000/5000$ nm. Additionally, triple deep well core NMOS transistors of size 120/60 nm and 5000/60 nm were included with a zero threshold voltage 1500/300 nm transistor and a zero threshold enclosed layout (ELT) 2240/300 nm transistor. The I/O NMOS transistor sizes were W $=280$ nm and L between 400 and 1000 nm, a transistor with size $500/500$ nm, and one with size $5000/5000$ nm. The following different types of I/O NMOS transistors were also included: a triple deep well 800/280 nm transistor, an ELT 2220/280 nm transistor, a zero threshold 3380/1200 nm transistor, and a zero threshold ELT 3450/1200 nm transistor.
 
 The test ASICs were wire bonded into pin grid array (PGA) chip carriers so that they could be irradiated on simple printed circuit boards (PCBs) containing only sockets for the ASICs and connectors for bias voltage. During irradiation PMOS transistors were biased in two different ways: 
 
@@ -27,7 +62,7 @@ Transistor characteristics were measured by mounting a single chip carrier at a 
 
 \subsection{Irradiation Setup}
 
-The irradiation of the test devices was performed at the Gamma Irradiation Facility (GIF) at Sandia National Laboratories.  The GIF uses $\ce{^{60}Co}$ sources to provide controlled doses of ionizing radiation. $\ce{^{60}Co}$ decays by beta decay to an excited state of $\ce{^{60}Ni}$ which then relaxes to the ground state by emitting two gamma rays of energy 1.17 and 1.33 MeV. The $\ce{^{60}Co}$ is held in stainless steel “source pins” so that none of the beta electrons escape the steel source pins. 40 pins are mounted in a straight-line array that is held at the bottom of an 18 foot deep pool of deionized water to provide shielding when not in use and raised out of the water when an irradiation takes place.
+The irradiation of the test devices was performed at the Gamma Irradiation Facility (GIF) at Sandia National Laboratories.  The GIF uses $\ce{^{60}Co}$ sources to provide controlled doses of ionizing radiation. $\ce{^{60}Co}$ decays by beta decay to an excited state of $\ce{^{60}Ni}$ which then relaxes to the ground state by emitting two gamma rays of energy 1.17 and 1.33 MeV. The $\ce{^{60}Co}$ is held in stainless steel ``source pins'' so that none of the beta electrons escape. 40 source pins are mounted in a straight-line array that is held at the bottom of an 18 foot deep pool of deionized water to provide shielding when not in use and raised out of the water when an irradiation takes place.
 
 The test ASICs were held inside stainless steel thermos bottles positioned approximately two inches from the face of the array of pins. Cooling was provided by vortex tube coolers mounted in holes drilled through the plastic thermos bottle lids. Figure~\ref{fig:Thermos} shows the thermos bottle assembly. To maintain the temperature of the thermos bottles, which were heated by the gamma rays interacting with the walls of the thermos bottles, the compressed air that was input to the vortex tubes was precooled and passed through insulated copper tubes. The temperature within the thermos bottles was measured and recorded by a K-type thermocouple in each thermos bottle. Figure~\ref{fig:Temperature} shows the temperature of two thermos bottles during the irradiations.
 
@@ -154,7 +189,7 @@ Figure~\ref{fig:AnnealSuperpositionPlots} demonstrates the annealing effects obs
 \label{fig:AnnealSuperpositionPlots}
 \end{figure}
 
-Figures~\ref{fig:MaxCurDrive_PMOS} and~\ref{fig:MaxCurDrive_NMOS} show the evolution of the maximum drain-source current for a representative selection of PMOS and NMOS core transistors during irradiation and annealing. Figure ~\ref{fig:DGNMOS_Vth} shows the threshold shift of a representative selection of NMOS I/O transistors during irradiation and annealing.
+Figures~\ref{fig:MaxCurDrive_PMOS} and~\ref{fig:MaxCurDrive_NMOS} show the evolution of the maximum drain-source current for a representative selection of PMOS and NMOS core transistors during irradiation and annealing. There were no significant differences in the effect of radiation on the various types of NMOS transistors tested (normal layout, enclosed layout, triple well, and zero $V_{th}$). Figure ~\ref{fig:DGNMOS_Vth} shows the threshold shift of a representative selection of NMOS I/O transistors during irradiation and annealing.
 
 \begin{figure}[htb!]
 \begin{minipage}[b]{0.5\textwidth}
@@ -167,7 +202,7 @@ Figures~\ref{fig:MaxCurDrive_PMOS} and~\ref{fig:MaxCurDrive_NMOS} show the evolu
 	\includegraphics[width=\linewidth]{RadiationStudies/Comparing_MaxCurDrive_Anneal_PMOS_paper.pdf}
 \end{minipage}
 \caption{The graph on the left shows the loss of maximum drain-source current during irradiation for 4 PMOS core transistors. The graph on the right shows the recovery of maximum drain-source current for the same 4 transistors during and after annealing.
-As in Figure 6, lines are included to make the plots easier to read.
+As in Figure~\ref{fig:DGNMOS_Vth}, lines are included to make the plots easier to read.
 Once again, lines are not drawn through the points corresponding to measurements made after 754 Mrad of transistors in one of the ASIC packages.}
 \label{fig:MaxCurDrive_PMOS}
 \end{figure}
@@ -202,7 +237,9 @@ Once again, lines are not drawn through the points corresponding to measurements
 
 \section{Summary}
 
-The irradiation of 65 nm CMOS transistors held at $-20^{\circ}\mathrm{C}$ was motivated by the need to simulate the actual operating conditions of the HL-LHC CMS pixel detector. The results show the same pattern of effects that had been observed at room temperature irradiations except the damage observed was less severe, rather than more severe. This could attributed to less atomic movement within the devices held at cold temperatures allowing the damage to not be as bad.
+The irradiation of 65 nm CMOS transistors held at $-20^{\circ}\mathrm{C}$ was motivated by the need to simulate the actual operating conditions of the HL-LHC CMS pixel detector. The results show the same pattern of effects that had been observed at room temperature irradiations except the damage observed was less severe, rather than more severe. This could be due to holes and electrons traveling slower through the oxide at lower temperatures and thus, recombining more often\cite{RINCE}.
+
+These studies show that 65 nm CMOS transistors are a viable option for electronics within the HL-LHC CMS pixel detector.
 
 
 
