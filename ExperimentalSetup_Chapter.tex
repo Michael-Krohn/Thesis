@@ -4,18 +4,19 @@
 \label{ch:ExpSetup}
 
 \section{The Large Hardon Collider}
-The Large Hadron Collider (LHC) accelerates protons and heavy ions in counter rotating beams to near-light speeds. These beams are contained in vacuum tubes that form a circle 26.7 km in circumference and are housed between 50 and 175 m underground, near the France-Switzerland border. The beams cross at four interaction points where four different detectors are located. 
+The Large Hadron Collider (LHC) accelerates protons and heavy ions in counter rotating beams to near-light speeds. These beams are contained in vacuum tubes that form a closed path 26.7 km in circumference and are housed between 50 and 175 m underground, near the France-Switzerland border. The beams cross at four interaction points where four different detectors are located. 
 
 In ideal conditions, each beam contains 2,808 bunches of protons and each bunch contains about 100 billion protons. These bunches are formed from the 16 radio-frequency (RF) cavities located on the beamline. The path and shape of the beam are controlled by about 9,600 magnets. Dipole magnets keep the beams on their circular path, while quadrupole magnets focus the beams. In order for the superconducting dipole magnets to provide a high magnetic field of 8.3 T, they must be kept at 1.9 K with superfluid Helium. 
 
-The design instantaneous luminosity, $\mathcal{L}$, is $10^{-34}\mathrm{cm}^{-2}\mathrm{s}^{-1}$ and only depends on beam parameters:
+The design instantaneous luminosity, $\mathcal{L}$, is $10^{34}\mathrm{cm}^{-2}\mathrm{s}^{-1}$ and only depends on beam parameters
 \begin{equation}
-\mathcal{L} = \frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi\varepsilon_{n}\beta}F
+\mathcal{L} = \frac{N_{b}^{2}n_{b}f_{rev}\gamma_{r}}{4\pi\varepsilon_{n}\beta}F,
 \end{equation}
 where $N_{b}$ is the number of particles per bunch, $n_{b}$ is the number of bunches per beam, $f_{rev}$ is the frequency of the revolutions of the beam, $\gamma_{r}$ is the relativistic factor, $\varepsilon_{n}$ is the normalized transverse beam emittance, $\beta$ is the beta function at the collision point and is roughly the width of the beam squared divided by the emittance, and F is the geometric luminosity reduction factor due to the crossing angle at the interaction point~\cite{LHCMachine}. Integrating the instantaneous luminosity with respect to time gives the integrated luminosity:
 \begin{equation}
-L = \int\mathcal{L}(t)dt
+L = \int\mathcal{L}(t)dt.
 \end{equation}
+
 In 2016, the LHC provided 35.9 $\mathrm{fb}^{-1}$ of integrated luminosity and a similar amount is expected in 2017. This luminosity is delivered with a bunch spacing of 25 ns and a center of mass energy of 13 TeV. To achieve this, electrons are stripped off of Hydrogen atoms by an electric field and the remaining protons are injected into a linear accelerator (LINAC 2) where they reach an energy of 50 MeV. The beam is then sent to the Proton Synchrotron Booster (PSB), which accelerates the protons to 1.4 GeV. Afterwards, the beams are injected into the Proton Synchrotron (PS) where they reach 25 GeV, followed by the Super Proton Synchrotron (PSP) where they are accelerated to 450 GeV. The beams are then accelerated in the main ring to 6.5 TeV. A layout of the acceleration facility can be seen in Figure~\ref{fig:AcceleratorLayout}\cite{LHCLayout}.
 
 \begin{figure}[htbp]
@@ -29,16 +30,16 @@ The Compact Muon Solenoid (CMS) detector is one of the general-purpose particle 
 
 The experiment uses a right-handed, Cartesian coordinate system that is oriented with the x-axis pointing to the center of the LHC ring, the y-axis pointing up, and the z-axis pointing along the beam line. A pseudo-polar coordinate system is also used due to the cylindrical symmetry of the detector. The azimuthal angle, $\phi$, is measured from the x-axis in the x-y plane, the polar angle, $\theta$, is defined from the z-axis, and the pseudorapidity, $\eta$, is given by $\eta = -\mathrm{ln}\, \mathrm{tan}(\theta/2)$. The transverse plane is used to define the component of observable quantities, like momentum and energy, that is perpendicular to the beamline in the x-y plane. 
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \includegraphics[width=\linewidth]{ExperimentalSetup/CMSDetector.png}
 \caption{A sliced view of the CMS detector.}
 \label{fig:CMSDetector}
 \end{figure}
 
 \subsection{The Tracker}
-The tracker is the innermost layer of the CMS detector and is completely made of silicon. It consists of 2 separate subdetectors: the inner pixel detector and the outer strip detector. The purpose of the tracker is to collect precise, three-dimensional single hit positions along the curved trajectories of charged particles to extract their momentum. The tracker covers up to a pseudorapidity of $\mid\eta\mid < 2.5$. A schematic of the tracker can be seen in Figure~\ref{fig:CMSTracker}~\cite{CMSExperiment}. 
+The tracker is the innermost layer of the CMS detector and is completely made of silicon. It consists of two separate subdetectors: the inner pixel detector and the outer strip detector. The purpose of the tracker is to collect precise, three-dimensional single hit positions along the curved trajectories of charged particles to extract their momentum. The tracker covers up to a pseudorapidity of $\mid\eta\mid < 2.5$. A schematic of the tracker can be seen in Figure~\ref{fig:CMSTracker}~\cite{CMSExperiment}. 
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=120mm]{ExperimentalSetup/Tracker.png}
 \end{center}
@@ -47,9 +48,18 @@ The tracker is the innermost layer of the CMS detector and is completely made of
 \end{figure}
 
 \subsubsection{The Pixel Detector}
-The pixel detector contains 65 million pixels that are $100 \times 150\,\mathrm{\mu m}^2$ with a thickness of $285\,\mathrm{\mu m}$. These pixels are contained in two different sections: the barrel (BPIX) and the endcaps (FPIX). The barrel is a cylindrical structure that surrounds the interaction vertex and consists of three concentric layers. These layers are at distances of 4.4, 7.3, and 10.2 cm from the beamlines. The endcap section consists of 2 symmetrical disk sections on either end of the barrel. Each section is made up of 2 disks that are 34.5 and 46.5 cm from the interaction point. At the end of the 2016 data taking period, an additional layer was added to the barrel region and the layers are now at distances of 3.0, 6.8, 10.2, and 16.0 cm. An additional disk was also added to each endcap region and each disk now consists of 2 concentric rings, inner and outer, to enable easy replacement.  A comparison of the 2016 and 2017 pixel detector geometries can be seen in Figure~\ref{fig:PixelUpgrade}\cite{CMSTracker}. 
+The pixel detector contains 65 million pixels that are $100 \times 150\,\mathrm{\mu m}^2$ with a thickness of $285\,\mathrm{\mu m}$. These pixels are contained in two different sections: the barrel (BPIX) and the endcaps (FPIX). The barrel is a cylindrical structure that surrounds the interaction vertex and consists of three concentric layers. These layers are at distances of 4.4, 7.3, and 10.2 cm from the beamlines. The endcap section consists of 2 symmetrical disk sections on either end of the barrel. Each section is made up of 2 disks that are 34.5 and 46.5 cm from the interaction point. An important feature of the pixel detector is its precise hit resolution, which is necessary for the high performance of different reconstruction and tagging algorithms. The resolution is measured by comparing the hit position in the second layer of the barrel with an interpolated track created from hits in the inner and outer layer and taking the residual difference. The resolution is 10.6 $\mu$m in the $r-\phi$ direction and 29.1 $\mu$m in the $z$ direction as shown in Figure~\ref{fig:PixelRes}\cite{PixelResolution}.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
+\includegraphics[width=0.45\textwidth]{ExperimentalSetup/PixelResolution_dx.pdf}
+\includegraphics[width=0.45\textwidth]{ExperimentalSetup/PixelResolution_dy.pdf}
+\caption{Distribution of hit residuals on the second pixel barrel layer in the transverse (left) and longitudinal (right) directions to the beam. The distribution is fitted with a student's t-function for which sigma is shown on the plot.}
+\label{fig:PixelRes}
+\end{figure}
+
+At the end of the 2016 data taking period, an additional layer was added to the barrel region and the layers are now at distances of 3.0, 6.8, 10.2, and 16.0 cm. An additional disk was also added to each endcap region and each disk now consists of 2 concentric rings, inner and outer, to enable easy replacement.  A comparison of the 2016 and 2017 pixel detector geometries can be seen in Figure~\ref{fig:PixelUpgrade}\cite{CMSTracker}. 
+
+\begin{figure}[h!]
 \includegraphics[width=\linewidth]{ExperimentalSetup/PixelDetectorUpgrade.png}
 \caption{A comparison of the 2016 pixel detector geometry with the 2017 upgrade geometry.}
 \label{fig:PixelUpgrade}
@@ -58,7 +68,7 @@ The pixel detector contains 65 million pixels that are $100 \times 150\,\mathrm{
 The silicon pixels are grouped in modules of $52 \times 80$ pixels and bump-bonded to a read-out-chip (ROC). These ROCs amplify and shape the signals from the pixel sensors so that they can be converted from analog to digital signals.  
 
 Due to the proximity of the pixel detector to the interaction point, the sensors and readout electronics will receive an incredibly high particle flux. The 
-innermost layer of the BPIX is expected to receive a radiation dose of 840 kGy after an integrated luminosity of 500 $\mathrm{fb}^{-1}$.  A radiation tolerant design was a top priority for both the electronics and sensors and more details on this will be given in Chapter~\ref{RadiationStudies}.
+innermost layer of the BPIX is expected to receive a radiation dose of 840 kGy after an integrated luminosity of 500 $\mathrm{fb}^{-1}$.  A radiation tolerant design was a top priority for both the electronics and sensors and more details on this will be given in Chapter~\ref{ch:RadStudies}.
 
 
 \subsubsection{The Strip Detector}
@@ -69,13 +79,11 @@ Outside of the pixel detector is the strip detector which is arranged in a simil
 
 Surrounding the tracker is the electromagnetic calorimeter (ECAL) which measures the energies of electrons and photons. The ECAL is made up of lead tungstate (PbWO4) crystals which produce scintillation light in fast, well defined photon showers whenever an electron or photon passes through them. These showers can be measured by photodetectors to determine the energy of the electron or photon. Since the yield of light in the crystals depends on temperature, the temperature of the ECAL does not vary by more than $0.1^{\circ}$C. 
 
-The ECAL is made up of a barrel region which consists of 61,200 crystals and 2 endcap segments which consist of 7,324 crystals. The barrel covers a pseudorapidity of $|\eta| < 1.479$ and is made of crystals with a cross section of $22\times22\;\mathrm{mm}^{2}$ and a length of 230 mm, which corresponds to 25.8 radiation lengths. The photodetectors in the barrel region are avalanche photodiodes and are made of silicon. The endcaps cover a pseudorapidity of $1.48 < |\eta| < 3.0$ and the crystals have dimensions $24.7\times24.7\times220\;\mathrm{mm}^{3}$. The crystals are organized into groups of 36 crystals, called a supercrystal, and each endcap contains 268 supercrystals. The photodiodes in the endcaps are vacuum phototriodes and are used because of the higher radiation tolerance that is needed in this region.
+The ECAL is made up of a barrel region which consists of 61,200 crystals and two endcap segments which consist of 7,324 crystals. The barrel covers a pseudorapidity of $|\eta| < 1.479$ and is made of crystals with a cross section of $22\times22\;\mathrm{mm}^{2}$ and a length of 230 mm, which corresponds to 25.8 radiation lengths. The photodetectors in the barrel region are avalanche photodiodes and are made of silicon. The endcaps cover a pseudorapidity of $1.48 < |\eta| < 3.0$ and the crystals have dimensions $24.7\times24.7\times220\;\mathrm{mm}^{3}$. The crystals are organized into groups of 36 crystals, called a supercrystal, and each endcap contains 268 supercrystals. The photodiodes in the endcaps are vacuum phototriodes and are used because of the higher radiation tolerance that is needed in this region.
 
-Another component of the ECAL is the preshower detector. The preshower sits in front of both endcaps and covers a pseudorapidity of $1.65 < |\eta| < 2.61$. The purpose of the preshower is for extra spatial precision in order to distinguish single photons from a $\pi^{0}$ decaying to two nearby photons. The preshower is made of 2 planes of lead followed by silicon sensors that have dimensions of $6.3\;\mathrm{cm}\times6.3\;\mathrm{cm}\times0.3\;\mathrm{mm}$\cite{CMSExperiment}\cite{CMSECAL}. 
+Another component of the ECAL is the preshower detector. The preshower sits in front of both endcaps and covers a pseudorapidity of $1.65 < |\eta| < 2.61$. The purpose of the preshower is for extra spatial precision in order to distinguish single photons from a $\pi^{0}$ decaying to two nearby photons. The preshower is made of 2 planes of lead followed by silicon sensors that have dimensions of $6.3\;\mathrm{cm}\times6.3\;\mathrm{cm}\times0.3\;\mathrm{mm}$\cite{CMSExperiment}\cite{CMSECAL}. The layout of the ECAL can be seen in Figure~\ref{fig:ECALSchematic}.
 
-The layout of the ECAL can be seen in Figure~\ref{fig:ECALSchematic}.
-
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=140mm]{ExperimentalSetup/ECAL_Layout.png}
 \end{center}
@@ -85,9 +93,9 @@ The layout of the ECAL can be seen in Figure~\ref{fig:ECALSchematic}.
 
 \subsection{The Hadron Calorimeter}
 
-The hadron calorimeter (HCAL) surrounds the ECAL and its purpose is to measure the energy of hadrons. It is designed to be a hermetic detector because all particles from an interaction must be detected to accurately measure the missing transverse energy (MET) of an event. The HCAL is a sampling detector that is made up of alternating layers of absorber and scintillator. The absorbers are made of either brass or steel and when a particle hits them a shower of particles is produced. Light is then emitted when particles pass through the scintillation material and absorbed by wavelength-shifting fibers that are less than 1 mm in diameter. The HCAL is divided into 4 sections: the barrel (HB), the endcap (HE), the outer calorimeter (HO), and the forward calorimeter (HF). A schematic of the HCAL can be viewed in Figure~\ref{fig:HCALSchematic}\cite{CMSExperiment}.
+The HCAL surrounds the ECAL and its purpose is to measure the energy of hadrons. It is designed to be a hermetic detector because all particles from an interaction must be detected to accurately measure the missing transverse energy (MET) of an event. The HCAL is a sampling detector that is made up of alternating layers of absorber and scintillator. The absorbers are made of either brass or steel and when a particle hits them a shower of particles is produced. Light is then emitted when particles pass through the scintillation material and absorbed by wavelength-shifting fibers that are less than 1 mm in diameter. The HCAL is divided into 4 sections: the barrel (HB), the endcap (HE), the outer calorimeter (HO), and the forward calorimeter (HF). A schematic of the HCAL can be viewed in Figure~\ref{fig:HCALSchematic}\cite{CMSExperiment}.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=130mm]{ExperimentalSetup/HCAL_Layout4.png}
 \end{center}
@@ -105,44 +113,42 @@ Due to the limited space within the solenoid magnet, the HO sits outside of the 
 
 \subsection{The Superconducting Magnet}
 
-As implied by the name of CMS, the superconducting magnet is a central design feature of the detector. By producing a uniform, 3.8 T magnetic field the paths of charged particles are bent and the momentum of these particles can be accurately measured. The magnet is a solenoid with a length of 12.5 m and a 6.3 m inside diameter. This large space allows the tracker, ECAL and HCAL to fit inside the solenoid. The magnet is made up of 4-layers of NbTi wires that are coiled and then cooled to $-268.5^{\circ}$C to allow electricity to flow through with minimal resistance and produce the largest magnetic field possible. The magnetic flux is returned through a yoke that weighs 10,000 tons and is made up of six endcap disks and five barrel wheels.
+As implied by the name of CMS, the superconducting magnet is a central design feature of the detector. By producing a uniform, 3.8 T magnetic field the paths of charged particles are bent and the momentum of these particles can be accurately measured. The magnet is a solenoid with a length of 12.5 m and a 6.3 m inside diameter. The magnet is made up of 4-layers of NbTi wires that are coiled and then cooled to $-268.5^{\circ}$C to allow current to flow through with minimal resistance and produce the largest magnetic field possible. The magnetic flux is returned through a yoke that weighs 10,000 tons and is made up of six endcap disks and five barrel wheels.
 
 \subsection{The Muon System}
 
 The muon system is the outermost sub-detector of CMS since muons have a small cross section and can pass through several meters of iron without interacting. There are 1400 muon chambers that compose the muon system and these chambers consist of three different types of detectors: drift tubes (DTs), cathode strip chambers (CSCs), and resistive plate chambers (RPCs). The muon system sits between the magnet return yolk and covers a pseudorapidity of $|\eta| < 2.4$. The DTs and RPCs make up the barrel region of the sub-detector and the CSCs and RPCs make up the endcap regions. A detailed view of the muon system can be seen in Figure~\ref{fig:MuonSchematic}\cite{CMSExperiment}.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \includegraphics[width=\linewidth]{ExperimentalSetup/MuonLayout.png}
 \caption{Schematic view of the muon system.}
 \label{fig:MuonSchematic}
 \end{figure}
 
-The DTs are 4 cm wide tubes that contain a wire within a gas volume comprised of $85\%$ Ar and $15\%$ $\mathrm{CO}_{2}$. The muons knock electrons off the atoms of the gas and collect on the wire where a positive voltage is applied. The drift velocity of electrons in the gaseous mixture is known and thus two position coordinates can be measured. The DTs are arranged in 4 concentric cylinders around the beamline and cover a pseudorapidity of $|\eta| < 1.2$. 
+The DTs are 4 cm wide tubes that contain a wire within a gas volume comprised of $85\%$ Ar and $15\%$ $\mathrm{CO}_{2}$. The muons ionize electrons off the atoms of the gas and the liberated electrons collect on the wire where a positive voltage is applied. The drift velocity of electrons in the gaseous mixture is known and thus two position coordinates can be measured. The DTs are arranged in 4 concentric cylinders around the beamline and cover a pseudorapidity of $|\eta| < 1.2$. 
 
-CSCs are made of arrays of positively charged anode wires crossed with negatively charged cathode strips within a gas volume. Electrons from the interacting muons are detected in a similar way as the DTs and since the wires and strips are perpendicular to each other 2 position coordinates are measured. The CSCs cover the pseudorapidity range $0.9 < |\eta| < 2.4$ and are arranged in 5 separate layers that are made up of different numbers of rings.
+CSCs are made of arrays of positively charged anode wires crossed with negatively charged cathode strips within a gas volume. Electrons from the traversing muons are detected in a similar way as the DTs and since the wires and strips are perpendicular to each other 2 position coordinates are measured. The CSCs cover the pseudorapidity range $0.9 < |\eta| < 2.4$ and are arranged in 5 separate layers that are made up of different numbers of rings.
 
-RPCs are made of 2 oppositely charged parallel plates that are made of a high resistivity plastic material and separated by a gaseous volume. The plates are transparent to electrons which are detected by external metallic strips. The RPCs give a coarser resolution than the DTs and CSCs, but have a timing resolution on the order of nanoseconds. They cover $|\eta| < 1.6$ and are primarily used as a secondary muon identification tool to confirm the measurements in the DTs and CSCs. 
+RPCs are made of 2 oppositely charged parallel plates that are made of a high resistivity plastic material and separated by a gaseous volume. The plates are transparent to electrons which are detected by external metallic strips. The RPCs have a coarser resolution than the DTs and CSCs, but have a timing resolution on the order of nanoseconds. They cover $|\eta| < 1.6$ and are primarily used as a secondary muon identification tool to confirm the measurements in the DTs and CSCs. 
 
 %At 1 TeV the standalone momentum resolution varies between $15\%$ and $40\%$ depending on $|\eta|$. $9\%$ resolution for muons up to 200 GeV. Including the tracker improves resolution by an order of magnitude for muons below 200 GeV.
 
 
 \subsection{The Trigger System}
 
-Collisions at CMS occur every 25 ns or at a rate of 40 MHz, which is an impossible amount of data to store. To reduce the amount of data, CMS employs a trigger system that attempts to only save interesting events. To do this, the trigger system is made up of 2 triggers: the Level-1 (L1) trigger and the high level trigger (HLT). The L1 trigger consists of programmable electronics and reduces the rate to 100 kHz. The HLT uses software to reconstruct physics objects and reduces the rate to below 1 kHz. 
+Collisions at CMS occur every 25 ns or at a rate of 40 MHz, which produces an impossible amount of data to store. To make the data storage manageable, CMS employs a trigger system that attempts to only save interesting events. To do this, the trigger system is made up of 2 triggers: the Level-1 (L1) trigger and the high level trigger (HLT). The L1 trigger consists of programmable electronics and reduces the rate of events accepted for possible storage to 100 kHz. The HLT uses software to reconstruct physics objects and reduces the rate to below 1 kHz. 
 
 \subsubsection{The Level-1 Trigger}
 
 The L1 trigger uses information from every sub-detector, except for the tracker, to determine whether an event is passed to the HLT. It has a 3.2 $\mu$s latency period to make this decision and the tracker cannot provide information from its measurements in this small time frame.  The final step of the L1 trigger that decides whether an event is kept or rejected is the Global Trigger and it uses information from the calorimeter trigger and muon trigger to make this decision.
 
-The initial step of the calorimeter trigger is the Trigger Primitive Generators (TPG), which sum the transverse energies measured in ECAL crystals or HCAL read-out towers. This info is used to determine possible electrons or photons, transverse energy sums, and tau-veto bits by the Regional Calorimeter Trigger. The Global Calorimeter Trigger then determines the highest-rank calorimeter trigger objects across the entire detector. It determines jets, total transverse energy, MET, jet counts, HT, and the highest-rank isolated and non-isolated electron and photon candidates.
+The initial step of the calorimeter trigger are the Trigger Primitive Generators (TPG), which sum the transverse energies measured in ECAL crystals or HCAL read-out towers. This information is used to determine possible electrons or photons, transverse energy sums, and tau-veto bits by the Regional Calorimeter Trigger. The Global Calorimeter Trigger then determines the highest-rank calorimeter trigger objects across the entire detector. It determines jets, total transverse energy, MET, jet counts, HT, and the highest-rank isolated and non-isolated electron and photon candidates.
 
 %The muon trigger uses track segments in the $\phi$-projection and hit patterns in the $\eta$-projection from the DT chambers. CSCs provide 3-dimensional track segments. The Regional Muon Triggers consists of the DT and CSC Track Finders, which join segments to complete tracks. RPC chambers provide their own track candidates based on regional hit patterns. The Global Muon Trigger combines info from the 3 sub-detectors to improve the momentum resolution and efficiency.
 
-The muon trigger uses track segments combined from the DTs and CSCs, as well as separate track candidates from the RPCs. The Global Muon Trigger combines this information to achieve the best momentum resolution and efficiency possible and determine the four best muon candidates.
- 
-The architecture of the L1 trigger system can be seen in Figure~\ref{fig:L1Trigger}.
+The muon trigger uses track segments combined from the DTs and CSCs, as well as separate track candidates from the RPCs. The Global Muon Trigger combines this information to achieve the best momentum resolution and efficiency possible and determine the four best muon candidates. The architecture of the L1 trigger system can be seen in Figure~\ref{fig:L1Trigger}.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=120mm]{ExperimentalSetup/L1Trigger.png}
 \end{center}
@@ -152,6 +158,6 @@ The architecture of the L1 trigger system can be seen in Figure~\ref{fig:L1Trigg
 
 \subsubsection{The High Level Trigger}
 
-The HLT is a software based system that uses reconstructed physics objects to make complicated calculations. These calculations are done using similar software to what is used in offline analyses. The HLT is made up of many different HLT paths that are implemented for specific analyses and each consist of a sequence of steps of reconstructing and filtering in increasing complexity. 
+The HLT is a software based system that uses reconstructed physics objects to make complicated calculations. These calculations are done using similar software to what is used in offline analyses. The HLT is made up of many different HLT paths that are implemented for specific analyses and each consist of a sequence of steps of reconstructing and filtering in increasing complexity. The HLT paths used by the analysis presented in this thesis will be described in Section~\ref{sec:Triggers}.
 
 

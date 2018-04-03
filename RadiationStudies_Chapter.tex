@@ -3,19 +3,17 @@
 %\chapter*{\centering Experimental Setup}
 \label{ch:RadStudies}
 
-The need for extremely radiation tolerant electronics, especially in the era of High Luminosity running at the LHC (HL-LHC), is a major issue confronting high energy physics. The HL-LHC will begin running in 2025 and the expected peak luminosity is $5\times10^{34}\; \mathrm{cm}^{-2}\mathrm{s}^{-1}$. At this luminosity, the particle flux near the collision vertex will be extremely high and the electronics in the pixel detector will need to be able to operate while accumulating a total ionizing dose of about 1 Grad. 
+The need for extremely radiation tolerant electronics, especially in the era of High Luminosity running at the LHC (HL-LHC), is a major issue confronting high energy physics. The HL-LHC will begin running in 2025 and the expected peak luminosity is $5\times10^{34}\; \mathrm{cm}^{-2}\mathrm{s}^{-1}$. At this luminosity, the particle flux near the collision vertex will be extremely high and it will be vital for reconstruction and b-tagging algorithms that the electronics in the pixel detector operate while accumulating a total ionizing dose of about 1 Grad. 
 
-To lower the material density and power dissipation in the pixel detector, the plan for the HL-LHC readout chips in the pixel detector at CMS is to upgrade from the current 130 nm complementary metal-oxide-semiconductor (CMOS) technology to 65 nm CMOS technology. Previous studies~\cite{CMOSXrayRadiation} showed that the properties of 65 nm CMOS technology did not dramatically change after being exposed to a total dose of 200 Mrad. However, these studies were conducted at room temperature and the pixel detector will be operated at $-20^{\circ}\mathrm{C}$ to limit the leakage current in the silicon strip trackers. At a lower temperature, the CMOS devices will not anneal as much and the radiation damage might be greater than had been observed in room temperature exposures. Thus, it is important to characterize the response of 65 nm CMOS technology to large radiation doses while operating at $-20^{\circ}\mathrm{C}$.
-
-This chapter summarizes an experiment~\cite{CMOSRadiation} that characterized the response of 65 nm CMOS transistors to a cumulative radiation dose of 1 Grad while being held below $-20^{\circ}\mathrm{C}$.
+To lower the material density and power dissipation in the pixel detector, the plan for the HL-LHC readout chips in the pixel detector at CMS is to upgrade from the current 250 nm complementary metal-oxide-semiconductor (CMOS) technology to 65 nm CMOS technology. Previous studies~\cite{CMOSXrayRadiation} showed that the properties of 65 nm CMOS technology did not dramatically change after being exposed to a total dose of 200 Mrad. However, these studies were conducted at room temperature and the pixel detector will be operated at $-20^{\circ}\mathrm{C}$ to limit the leakage current in the silicon strip trackers. At a lower temperature, the CMOS devices will not anneal as much and the radiation damage might be greater than had been observed in room temperature exposures. Therefore, this chapter summarizes an important study that characterizes the response of 65 nm CMOS technology to a cumulative radiation dose of 1 Grad while operating below $-20^{\circ}\mathrm{C}$.
 
 \section{Radiation Damage Mechanisms}
 
-Two types of radiation damage can occur when energetic particles pass through a semiconductor device and either electron-hole pairs (ionization damage) are created or silicon atoms are displaced from their lattice sites (displacement damage). This chapter will focus on ionization damage. 
+Two types of radiation damage can occur when energetic particles pass through a semiconductor device and either electron-hole pairs (``ionization damage'') are created or silicon atoms are displaced from their lattice sites (``displacement damage''). This section will focus on ionization damage because that is the damage mechanism that this study characterized. 
 
 Ionization damage occurs in the insulating layers of the device, usually $\ce{SiO_{2}}$, when the electrons and holes drift to different locations where they are trapped and cause unwanted electromagnetic fields within the device. There are two locations of insulating layers within current semiconductors: the gate oxide and the shallow trench isolation (STI) oxide. A layout of a CMOS transistor can be seen in Figure~\ref{fig:CMOS_Layout}\cite{CMOSLayout}.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=4 in]{RadiationStudies/CMOS_Layout_2.jpg}
 \end{center}
@@ -23,18 +21,18 @@ Ionization damage occurs in the insulating layers of the device, usually $\ce{Si
 \label{fig:CMOS_Layout}
 \end{figure}
 
-Gate oxide separates the gate terminal from the conductive channel that connects the source and drain and serves as a dielectric layer so that the gate can sustain a high electric field. When electron-hole pairs are created in the gate oxide the electrons are swept out of the oxide by the positive voltage applied on the gate terminal while holes move in the opposite direction toward the Si/$\ce{SiO_{2}}$ interface. Two separate mechanisms can then occur~\cite{TIDEffects}: 
+The gate oxide separates the gate terminal from the conductive channel that connects the source and drain and serves as a dielectric layer so that the gate can sustain a high electric field. When electron-hole pairs are created in the gate oxide the electrons are swept out of the oxide by the positive voltage applied on the gate terminal while holes move in the opposite direction toward the Si/$\ce{SiO_{2}}$ interface. Two separate mechanisms can then occur~\cite{TIDEffects}: 
 \begin{itemize}
 \item \textbf{Deep Hole Trapping:}  There is a transition region from $\ce{SiO_{2}}$ to Si where the oxidation is not complete and there are oxygen vacancies. These vacancies cause weak Si-Si bonds, where each Si atom is also bonded to three oxygen atoms, that are broken by holes which then remain trapped there. The holes accumulate at the interface causing a buildup of positive charge.
 \item \textbf{Radiation-Induced Traps:} At the Si/$\ce{SiO_{2}}$ interface there are tri-valent Si atoms that have been passivated by H atoms. Radiation-induced holes free protons from the oxide and the protons then travel to the Si/$\ce{SiO_{2}}$ interface. At the interface the proton breaks the Si-H bond to form $\ce{H_{2}}$ and a trivalent Si atom that is left with an unpassivated dangling bond that is an electrically active defect.
 \end{itemize}
-These effects cause the voltage seen by the conductive channel to differ from the actual voltage applied at the gate terminal and thus, the transistor will turn on at a different voltage than it was designed to. These mechanisms are extremely dependent on the thickness of the gate oxide and more deep hole and radiation-induced traps will build up the thicker the gate oxide is. 
+These effects cause the voltage seen by the conductive channel to differ from the actual voltage applied at the gate terminal and therefore, the transistor will turn on at a different voltage than it was designed to. These mechanisms are extremely dependent on the thickness of the gate oxide and more deep hole and radiation-induced traps will build up the thicker the gate oxide is. 
 
 STI oxide is implanted in the silicon between adjacent semiconductors to prevent leakage current. The same mechanisms that occur in the gate oxide also occur in the STI oxide, however they effect the transistor functionality differently. When charge builds up in the STI oxide, a conductive channel is opened between the source and drain of the transistor and leakage current can flow even when the transistor is turned off. This is illistrated in Figure~\ref{fig:LeakageCurrent}\cite{LeakageCurrent}. 
 
-The radiation induced charge that is trapped in the STI also prevents channel inversion near the STI and reduces the conductive channel width. This is referred to as Radiation Induced Narrow Channel Effect (RINCE)\cite{RINCE} and is more evident in narrow channel devices. A narrower conductive channel allows less current to flow from the source to drain and thus, the maximum drain to source current that can be achieved is decreased.
+The radiation induced charge that is trapped in the STI also prevents channel inversion near the STI and reduces the conductive channel width. This is referred to as Radiation Induced Narrow Channel Effect (RINCE)\cite{RINCE} and is more evident in narrow channel devices. A narrower conductive channel allows less current to flow from the source to drain and thus, the maximum drain to source current that can be achieved in a transistor is decreased.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=4 in]{RadiationStudies/LeakageCurrent_2.jpg}
 \end{center}
@@ -42,7 +40,7 @@ The radiation induced charge that is trapped in the STI also prevents channel in
 \label{fig:LeakageCurrent}
 \end{figure}
 
-Transistors can at least partially recover from these radiation induced damage mechanisms through a process called annealing. This is a complex process that occurs either when trapped charge tunnels out of the oxide or is thermally excited enough to leave the oxide. Once a charge is free from the oxide, it is swept away by oppositely charged voltage contacts of the transistor. 
+Transistors can at least partially recover from these radiation induced damage mechanisms through a process called annealing. This is a complex process that occurs either when trapped charge tunnels out of the oxide or is thermally excited enough to leave the oxide. Once a charge is free from the oxide, it is swept away by oppositely charged voltage contacts of the transistor. While this can improve the performance of individual transistors it is not a feasible solution for the entire pixel detector due to the complex interaction of numerous devices that react differently to annealing.
 
 \section{Experimental Details}
 
@@ -62,11 +60,11 @@ Transistor characteristics were measured by mounting a single chip carrier at a 
 
 \subsection{Irradiation Setup}
 
-The irradiation of the test devices was performed at the Gamma Irradiation Facility (GIF) at Sandia National Laboratories.  The GIF uses $\ce{^{60}Co}$ sources to provide controlled doses of ionizing radiation. $\ce{^{60}Co}$ decays by beta decay to an excited state of $\ce{^{60}Ni}$ which then relaxes to the ground state by emitting two gamma rays of energy 1.17 and 1.33 MeV. The $\ce{^{60}Co}$ is held in stainless steel ``source pins'' so that none of the beta electrons escape. 40 source pins are mounted in a straight-line array that is held at the bottom of an 18 foot deep pool of deionized water to provide shielding when not in use and raised out of the water when an irradiation takes place.
+The irradiation of the test devices was performed at the Gamma Irradiation Facility (GIF) at Sandia National Laboratories.  The GIF uses $\ce{^{60}Co}$ sources to provide controlled doses of ionizing radiation. $\ce{^{60}Co}$ decays by beta decay to an excited state of $\ce{^{60}Ni}$ which then relaxes to the ground state by emitting two gamma rays of energy 1.17 and 1.33 MeV. The $\ce{^{60}Co}$ is held in stainless steel ``source pins'' so that none of the beta electrons escape. Fourty source pins are mounted in a straight-line array that is held at the bottom of an 18 foot deep pool of deionized water to provide shielding when not in use and raised out of the water when an irradiation takes place.
 
 The test ASICs were held inside stainless steel thermos bottles positioned approximately two inches from the face of the array of pins. Cooling was provided by vortex tube coolers mounted in holes drilled through the plastic thermos bottle lids. Figure~\ref{fig:Thermos} shows the thermos bottle assembly. To maintain the temperature of the thermos bottles, which were heated by the gamma rays interacting with the walls of the thermos bottles, the compressed air that was input to the vortex tubes was precooled and passed through insulated copper tubes. The temperature within the thermos bottles was measured and recorded by a K-type thermocouple in each thermos bottle. Figure~\ref{fig:Temperature} shows the temperature of two thermos bottles during the irradiations.
 
-\begin{figure}[htbp]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=4 in]{RadiationStudies/thermos.pdf}
 \end{center}
@@ -74,7 +72,7 @@ The test ASICs were held inside stainless steel thermos bottles positioned appro
 \label{fig:Thermos}
 \end{figure}
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=5.5 in]{RadiationStudies/comp_temp.pdf}
 \end{center}
@@ -86,7 +84,7 @@ The does rate the test ASICs received was 1425 rad/s and was measured by an ion 
 
 Twelve irradiations were performed over 15 days, as show in Table~\ref{tab:IrradiationSchedule}, and after each irradiation step a single characteristic curve was recorded for each transistor. All measurements were made at room temperature, but when a test ASIC wasn't being irradiated or measured they were stored at $-20^{\circ}\mathrm{C}$ in a freezer. After the full irradiation, devices were kept at room temperature for a week and multiple characteristics were taken to characterize the annealing effects. The transistors were then held in an oven at $100^{\circ}\mathrm{C}$ for one week to simulate an extended annealing period and a final set of measurements was made.
 
-\begin{table}
+\begin{table}[h!]
 \begin{center}
 \caption{The irradiation schedule, showing the 2 weeks it took to accumulate 1 Grad.}
 \begin{tabular}{| p{2cm} | p{2.5cm} | p{2cm} | p{4cm} |}
@@ -115,7 +113,7 @@ June 13-16 & 66 hours & 339 & 1093 \\
 
 Two quantities were extracted from each transistor characteristic: the maximum drain-source current and the threshold voltage, $V_{th}$. The quadratic extrapolation method was used to determine the threshold voltage~\cite{QuadraticMethod}. As shown in Figure~\ref{fig:QuadraticMethod}, $V_{th}$ is defined to be the voltage at which a line tangent to the curve $\sqrt{|I_{ds}|}$ vs $V_{gs}$ at the point of maximum $\frac{d \sqrt{|I_{ds}|}}{dV_{gs}}$ intercepts the $I_{ds}=0$ axis. The slope of the curve was determined by fitting it with a fifth order polynomial and differentiating the fit function. 
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=5 in]{RadiationStudies/Quadratic_Method.pdf}
 \end{center}
@@ -129,7 +127,7 @@ Figure~\ref{fig:SuperpositionPlots}  illustrates the radiation effects observed 
 
 %No error bars are included in the figures because the uncertainty in the SMU measurements is smaller than the symbols used to plot the measurements.
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 %	\begin{minipage}[b]{.5\linewidth}
 	\begin{subfigure}{.5\linewidth}
 	\includegraphics[width=\linewidth]{RadiationStudies/pd012_2_comparison_paper.pdf}
@@ -155,7 +153,7 @@ Figure~\ref{fig:SuperpositionPlots}  illustrates the radiation effects observed 
 \label{fig:SuperpositionPlots}
 \end{figure}
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 	\begin{subfigure}{.5\linewidth}
 %\begin{minipage}[b]{0.5\textwidth}
 	\centering
@@ -175,7 +173,7 @@ Figure~\ref{fig:SuperpositionPlots}  illustrates the radiation effects observed 
 
 Figure~\ref{fig:AnnealSuperpositionPlots} demonstrates the annealing effects observed in our data. Both the PMOS core transistors and the NMOS I/O transistors recovered significantly during the annealing period. 
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{minipage}[b]{0.5\textwidth}
 	\centering
 	\includegraphics[width=\linewidth]{RadiationStudies/pd012_2_Anneal_comparison_paper.pdf}
@@ -191,7 +189,7 @@ Figure~\ref{fig:AnnealSuperpositionPlots} demonstrates the annealing effects obs
 
 Figures~\ref{fig:MaxCurDrive_PMOS} and~\ref{fig:MaxCurDrive_NMOS} show the evolution of the maximum drain-source current for a representative selection of PMOS and NMOS core transistors during irradiation and annealing. There were no significant differences in the effect of radiation on the various types of NMOS transistors tested (normal layout, enclosed layout, triple well, and zero $V_{th}$). Figure ~\ref{fig:DGNMOS_Vth} shows the threshold shift of a representative selection of NMOS I/O transistors during irradiation and annealing.
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{minipage}[b]{0.5\textwidth}
 	\centering
 	\includegraphics[width=\linewidth]{RadiationStudies/Comparing_MaxCurrentDrive_PMOS_paper.pdf}
@@ -207,7 +205,7 @@ Once again, lines are not drawn through the points corresponding to measurements
 \label{fig:MaxCurDrive_PMOS}
 \end{figure}
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{minipage}[b]{0.5\textwidth}
 	\centering
 	\includegraphics[width=\linewidth]{RadiationStudies/Comparing_MaxCurrentDrive_NMOS_paper.pdf}
@@ -221,7 +219,7 @@ Once again, lines are not drawn through the points corresponding to measurements
 \label{fig:MaxCurDrive_NMOS}
 \end{figure}
 
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \begin{minipage}[b]{0.5\textwidth}
 	\centering
 	\includegraphics[width=\linewidth]{RadiationStudies/Comparing_ThreshVolt_DGNMOS_paper.pdf}
@@ -237,9 +235,7 @@ Once again, lines are not drawn through the points corresponding to measurements
 
 \section{Summary}
 
-The irradiation of 65 nm CMOS transistors held at $-20^{\circ}\mathrm{C}$ was motivated by the need to simulate the actual operating conditions of the HL-LHC CMS pixel detector. The results show the same pattern of effects that had been observed at room temperature irradiations except the damage observed was less severe, rather than more severe. This could be due to holes and electrons traveling slower through the oxide at lower temperatures and thus, recombining more often\cite{RINCE}.
-
-These studies show that 65 nm CMOS transistors are a viable option for electronics within the HL-LHC CMS pixel detector.
+The irradiation of 65 nm CMOS transistors held at $-20^{\circ}\mathrm{C}$ was motivated by the need to simulate the actual operating conditions of the HL-LHC CMS pixel detector. Before these tests, it was expected that the radiation damage in 65 nm CMOS transistors would increase when the devices were held a lower temperatures due to less annealing occurring. However, these results show the same pattern of effects that had been observed at room temperature irradiations except the damage observed was less severe, rather than more severe. This could be due to holes and electrons traveling slower through the oxide at lower temperatures and thus, recombining more often\cite{RINCE}. A subsequent test was conducted where the devices were held at three different temperatures, 20, 0, and $-20^{\circ}\mathrm{C}$, and the results were consistent with the results presented here, where the warmer devices had more radiation damage. Based on these studies, it is recommended that the electronics in the HL-LHC pixel detector use all but the smallest sized, 120/60 nm, 65 nm CMOS transistors.
 
 
 

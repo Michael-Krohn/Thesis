@@ -39,46 +39,53 @@
 \usepackage{subcaption}
 \usepackage{textcomp}
 \usepackage{float}
+\usepackage{enumitem}
+%\usepackage[landscape]{geometry}
+\usepackage{array}
+\usepackage{multirow}
 
 %%%%%%%%%%%%   All the preamble material:   %%%%%%%%%%%%
 
-\title{This is the Name of my Thesis}
+\title{Search for a Heavy Resonance Decaying to a Pair of Higgs Bosons in the Four b-quark Final State with the CMS Experiment}
 
-\author{I.~B.}{Scriptor}
+\author{M.~D.}{Krohn}
 
-\otherdegrees{B.A., North Dakota State University, 2005 \\
-	      M.S., University of Reno, 2007}
+\otherdegrees{B.S., University of Wisconsin, 2012 \\
+	      M.S., University of Colorado, 2014}
 
 \degree{Doctor of Philosophy}		%  #1 {long descr.}
-	{Ph.D., Rocket Science}		%  #2 {short descr.}
+	{Ph.D., Physics}		%  #2 {short descr.}
 
 \dept{Department of}			%  #1 {designation}
-	{Rocket Science}		%  #2 {name}
+	{Physics}		%  #2 {name}
 
 \advisor{Prof.}				%  #1 {title}
-	{Ed Visor}			%  #2 {name}
+	{Stephen Wagner}			%  #2 {name}
 
-\reader{Prof.~Rachel Goddard}		%  2nd person to sign thesis
-\readerThree{Ms.~Thora Nea}		%  3rd person to sign thesis
+\reader{Prof.~John P. Cumalat}		%  2nd person to sign thesis
+%\readerThree{Ms.~John P. Cumalat}		%  3rd person to sign thesis
 
 \abstract{  \OnePageChapter	% because it is very short
 
-	Often the abstract will be long enough to require
-	more than one page, in which case the macro
-	``$\backslash$OnePageChapter'' should {\it not}
-	be used.
+	A search for a massive resonance decaying into a pair of standard model Higgs bosons, in a final state consisting of two b quark-antiquark pairs, is performed using proton-proton collisions at a center-of-mass energy of 13 TeV collected by the Compact Muon Solenoid detector at the Large Hadron Collider and corresponding to an integrated luminosity of 35.9 $\mathrm{fb}^{-1}$. The Higgs bosons are highly Lorentz-boosted and are each reconstructed as a single large-area jet. The signal is characterized by a peak in the dijet invariant mass distribution, above a background from the standard model multijet production. The observations are consistent with the background expectations, and are interpreted as upper limits on the products of the production cross sections and branching fractions of narrow bulk gravitons and radions in warped extra-dimensional models. The limits range from 126 to 1.4 fb at 95\% confidence level for resonances with masses between 750 and 3000 GeV, and are the most stringent to date, over the explored mass range.
 
-	But this one isn't, so it should.
 	}
 
-\dedication[Dedication]{	% NEVER use \OnePageChapter here.
-	To all of the fluffy kitties.
-	}
+%\dedication[Dedication]{	% NEVER use \OnePageChapter here.
+%	To my parents, David Krohn and Kay Reuter-Krohn. 
+%	}
 
 \acknowledgements{	\OnePageChapter	% *MUST* BE ONLY ONE PAGE!
-	Here's where you acknowledge folks who helped.
-	But keep it short, i.e., no more than one page,
-	as required by the Grad School Specifications.
+	%Here's where you acknowledge folks who helped.
+%	But keep it short, i.e., no more than one page,
+%	as required by the Grad School Specifications.
+First and foremost, I need to thank my parents, David Krohn and Kay Reuter-Krohn. Without your constant love and support this would not have been remotely possible. You showed me the value of a good work ethic and have been outstanding role models. I can’t thank you enough. I also owe a great deal to all the friends in Madison, Boulder, and Fermilab who have always been a major source of support if research ever got discouraging. A special thanks to the PLG.
+
+There are so many people to thank for the help and guidance throughout my graduate research: David Christian and the Fermilab ASIC group for all that you taught me regarding pixel electronics. Ben Bentele and John Cumalat for the long hours collecting data at Sandia. The entire HH to 4b analysis group, Marc Osherson, Devdatta Majumder, Petar Maksimovic, Maxime Gouzevitch, Ching-Wei Chen, Shin-Shan Eiko Yu, and Alice Cocoros, for making this thesis possible. A very special thanks to Caterina Vernieri for bringing me into the HH analysis group, teaching me the fundamentals of a physics analysis, and presenting me with numerous opportunities to further my research. I also must thank the entire CMS community for allowing such a large-scale experiment to somehow function properly. 
+
+Finally, Steve Wagner, I am extremely grateful to have had you as an advisor. You gave me the freedom to pursue any topic that interested me and you always searched for the situations that would best allow me to conduct that research. Despite usually being a time zone apart, you were always just a phone call away to offer your insight and advice. Thank you so much for your support and mentorship.
+
+
 	}
 
 % \IRBprotocol{E927F29.001X}	% optional!
@@ -100,15 +107,16 @@
 \begin{document}
 
 \input macros.tex
-%\input Intro_Chapter.tex
-%\input Theory_Chapter.tex
-%\input ExperimentalSetup_Chapter.tex
-%\input ObjectReconstruction_Chapter.tex
-%\input RadiationStudies_Chapter.tex
+\input Intro_Chapter.tex
+\input Theory_Chapter.tex
+\input ExperimentalSetup_Chapter.tex
+\input ObjectReconstruction_Chapter.tex
+\input RadiationStudies_Chapter.tex
 \input Analysis_Chapter.tex
+\input Conclusion_Chapter.tex
 
 %%%%%%%%%   then the Bibliography, if any   %%%%%%%%%
-\bibliographystyle{plain}	% or "siam", or "alpha", etc.
+\bibliographystyle{unsrt}	% or "siam", or "alpha", etc.
 \nocite{*}		% list all refs in database, cited or not
 \bibliography{Thesis}		% Bib database in "refs.bib"
 
